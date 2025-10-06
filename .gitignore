@@ -2,7 +2,7 @@
 /build/
 /out/
 /logs
-.gradle/
+#.gradle/
 .mvn/
 mvnw.cmd
 mvnw
@@ -15,5 +15,11 @@ target/
 *.log
 .DS_Store
 .vscode/
-/gradle/
+#/gradle/
+#.gradle/
+#build.gradle
+#settings.gradle
+#gradle/
+#gradlew
+#gradlew.bat
 
