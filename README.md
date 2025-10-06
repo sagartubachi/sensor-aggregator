@@ -54,10 +54,30 @@ security.enabled=true  # or false
 ```
 When enabled, you must include a valid JWT in the Authorization header:
 ```bash
-Authorization: Bearer <your_token_here>
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ
 ```
 
 ## Example API Usage
+
+### Token Generation 
+You can use the following token and skip this step if needed
+```bash
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ
+```
+
+Call the following to generate a new token if needed. This token will be valid for 100 days after its generation.
+```bash
+http://localhost:8080/api/auth/login
+{"username":"admin","password":"admin123"}
+```
+#### Response
+```bash
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ",
+    "type": "Bearer",
+    "expiresIn": 8640000
+}
+```
 
 ### Get Aggregates
 ```bash
