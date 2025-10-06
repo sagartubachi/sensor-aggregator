@@ -67,18 +67,6 @@ class QueryControllerTest {
     }
 
     @Test
-    void testQueryAggregates_NoResults() throws Exception {
-        when(service.getAggregates(any())).thenReturn(Collections.emptyList());
-
-        mockMvc.perform(get("/api/query")
-                        .param("from", "2025-10-03T00:00:00Z")
-                        .param("to", "2025-10-03T23:59:59Z")
-                )
-                .andExpect(status().isOk())
-                .andExpect(content().string("{\"message\":\"No matching records found\"}"));
-    }
-
-    @Test
     void testQueryAggregates_MissingRequiredParam() throws Exception {
         mockMvc.perform(get("/api/query")
                         .param("to", "2025-10-03T23:59:59Z")

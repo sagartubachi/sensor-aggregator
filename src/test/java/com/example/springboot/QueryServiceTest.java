@@ -67,7 +67,7 @@ class QueryServiceTest {
         );
 
         CustomException ex = assertThrows(CustomException.class, () -> service.getAggregates(params));
-        assertEquals(CustomException.ErrorCode.NOT_FOUND, ex.getErrorCode());
+        assertEquals(CustomException.ErrorCode.NO_RECORDS_FOUND, ex.getErrorCode());
     }
 
     @Test

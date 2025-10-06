@@ -15,11 +15,11 @@ target/
 *.log
 .DS_Store
 .vscode/
-#/gradle/
-#.gradle/
-#build.gradle
-#settings.gradle
-#gradle/
-#gradlew
-#gradlew.bat
+/gradle/
+.gradle/
+build.gradle
+settings.gradle
+gradle/
+gradlew
+gradlew.bat
 

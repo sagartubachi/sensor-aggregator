@@ -10,7 +10,7 @@ public class CustomException extends RuntimeException {
     public enum ErrorCode {
         GENERIC_ERROR,
         VALIDATION_ERROR,
-        NOT_FOUND,
+        NO_RECORDS_FOUND,
         MISSING_PARAMETER,
         TYPE_MISMATCH
     }

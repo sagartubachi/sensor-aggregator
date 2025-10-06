@@ -1,6 +1,5 @@
 package com.example.springboot.exception;
 
-import com.example.springboot.controller.QueryController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -86,9 +84,16 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<Object> handleApiException(CustomException ex) {
 
+        HttpStatus httpStatus;
+
         log.info("GlobalExceptionHandler : CustomException caught");
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of(
+        if(ex.getErrorCode() == CustomException.ErrorCode.NO_RECORDS_FOUND)
+            httpStatus = HttpStatus.NO_CONTENT;
+        else
+            httpStatus = HttpStatus.BAD_REQUEST;
+
+        return ResponseEntity.status(httpStatus).body(Map.of(
                 "errorCode", ex.getErrorCode(),
                 "message", ex.getMessage()
         ));
