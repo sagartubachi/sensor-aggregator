@@ -102,6 +102,28 @@ http://localhost:8080/api/query?from=2025-10-03T23:59:59Z&to=2026-10-03T23:59:59
 ```
 If no records match, a 204 status code is returned
 
+#### Sample curl calls
+Get Aggregates grouped by device type
+```bash
+curl --location 'http://localhost:8080/api/query?from=2024-09-07T13%3A18%3A13Z&to=2025-11-07T14%3A18%3A13Z&groupByDeviceType=true' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ'
+```
+Get Aggregates grouped by device type and group id
+```bash
+curl --location 'http://localhost:8080/api/query?from=2024-09-07T13%3A18%3A13Z&to=2025-11-07T14%3A18%3A13Z&groupByGroupId=true&groupByDeviceType=true' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ'
+```
+Get Aggregates grouped by group id and filtered by a specific device type
+```bash
+curl --location 'http://localhost:8080/api/query?from=2024-09-07T13%3A18%3A13Z&to=2025-11-07T14%3A18%3A13Z&deviceType=vehicle&groupByGroupId=true' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ'
+```
+Get Aggregates for a particular device id
+```bash
+curl --location 'http://localhost:8080/api/query?deviceId=wearable-3&from=2024-09-07T13%3A18%3A13Z&to=2025-11-07T14%3A18%3A13Z' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1OTc5Mjk5NCwiZXhwIjoxNzY4NDMyOTk0LCJpc3MiOiJpb3Qtc2Vuc29yLWFwcCJ9.AnddHqtBfBSLkRxcwP3OnErgSnrEW794urm0s5H5-zQ'
+```
+
 ### IOT Ingestion
 Note that as soon as the application is started, the IOT device similations will start and ingest readings for 30 seconds which is configurable in the IoTDeviceSimulator.java
 If you want to explicitly add sensor readings to the database
