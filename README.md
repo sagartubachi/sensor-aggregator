@@ -96,9 +96,7 @@ http://localhost:8080/api/query?from=2025-10-03T23:59:59Z&to=2026-10-03T23:59:59
         "minValue": 5.873271868061579,
         "maxValue": 19.6822969930249,
         "medianValue": 13.520103270178923,
-        "count": 30,
-        "startTime": "2025-10-03T23:59:59Z",
-        "endTime": "2026-10-03T23:59:59Z"
+        "count": 30
     }
 ]
 ```
