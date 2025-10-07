@@ -151,7 +151,20 @@ If any mandatory parameter is missing, a 400 Http status code is returned.
     }
 }
 ```
-
+#### Sample curl call
+```bash
+curl --location 'http://localhost:8080/api/ingest' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=9C09A17D1BCFBC1DDF3BDA927C8D9A31' \
+--data '{
+  "deviceId": "d1",
+  "deviceType": "heart",
+  "groupId": "Zone-A",
+  "metric": "temperature",
+  "reading": 50,
+  "ts": "2025-10-02T20:55:12Z"
+}'
+```
 
 
 
