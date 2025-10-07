@@ -31,7 +31,7 @@ This project demonstrates the use of **Spring Boot**, **JPA**, **JWT authenticat
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/sensor-aggregator.git
+git clone https://github.com/sagartubachi/sensor-aggregator.git
 cd sensor-aggregator
 ```
 
