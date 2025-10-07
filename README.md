@@ -105,6 +105,7 @@ If no records match, a 204 status code is returned
 #### Sample curl calls
 
 Please note to generate a new token and replace in these sample APIs if the token used in the sample curls are expired
+
 Get Aggregates grouped by device type
 ```bash
 curl --location 'http://localhost:8080/api/query?from=2024-09-07T13%3A18%3A13Z&to=2025-11-07T14%3A18%3A13Z&groupByDeviceType=true' \
