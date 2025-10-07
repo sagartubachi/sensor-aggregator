@@ -113,7 +113,7 @@ http://localhost:8080/api/ingest
   "groupId": "Zone-A",
   "metric": "temperature",
   "reading": 50,
-  "ts": "2025-10-02T20:55:12Z"   // optional; server can also set now()
+  "ts": "2025-10-02T20:55:12Z"
 }
 ```
 If an HTTP status code of 201 is received, the reading is successfully ingested.
