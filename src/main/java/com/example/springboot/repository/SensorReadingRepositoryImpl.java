@@ -80,6 +80,9 @@ public class SensorReadingRepositoryImpl implements SensorReadingRepositoryCusto
             sql.append("GROUP BY ").append(String.join(", ", groupCols));
         }
 
+        // Add sorting by count (descending by default)
+        sql.append(" ORDER BY countValue DESC");
+
         // Create Query
         jakarta.persistence.Query query = em.createQuery(sql.toString());
 
@@ -107,9 +110,7 @@ public class SensorReadingRepositoryImpl implements SensorReadingRepositoryCusto
                         ((Number) arr[5]).doubleValue(),
                         ((Number) arr[6]).doubleValue(),
                         ((Number) arr[7]).doubleValue(),
-                        ((Number) arr[8]).longValue(),
-                        start,
-                        end
+                        ((Number) arr[8]).longValue()
                 ))
                 .collect(Collectors.toList());
     }

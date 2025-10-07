@@ -49,9 +49,7 @@ class QueryControllerTest {
         List<AggregateResponse> mockResult = List.of(
                 new AggregateResponse(
                         "device-1", "thermostat", "group-1", "temperature",
-                        25.0, 20.0, 30.0, 25.0, 5L,
-                        Instant.parse("2025-10-03T00:00:00Z"),
-                        Instant.parse("2025-10-03T23:59:59Z")
+                        25.0, 20.0, 30.0, 25.0, 5L
                 )
         );
 

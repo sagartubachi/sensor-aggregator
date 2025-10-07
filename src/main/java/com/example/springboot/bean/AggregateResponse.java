@@ -15,14 +15,12 @@ public class AggregateResponse {
     private Double maxValue;
     private Double medianValue;
     private Long count;
-    private Instant startTime;
-    private Instant endTime;
 
     public AggregateResponse() {}
 
     public AggregateResponse(String deviceId, String deviceType, String groupId, String metric,
                              Double avgValue, Double minValue, Double maxValue, Double medianValue,
-                             Long count, Instant startTime, Instant endTime) {
+                             Long count) {
         this.deviceId = deviceId;
         this.deviceType = deviceType;
         this.groupId = groupId;
@@ -32,8 +30,6 @@ public class AggregateResponse {
         this.maxValue = maxValue;
         this.medianValue = medianValue;
         this.count = count;
-        this.startTime = startTime;
-        this.endTime = endTime;
     }
 
     // --- Getters & Setters ---
@@ -100,21 +96,5 @@ public class AggregateResponse {
 
     public void setCount(Long count) {
         this.count = count;
-    }
-
-    public Instant getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Instant startTime) {
-        this.startTime = startTime;
-    }
-
-    public Instant getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Instant endTime) {
-        this.endTime = endTime;
     }
 }
