@@ -39,9 +39,7 @@ public class IngestController {
 
         // All the basic validations are happening via the @Validated checks by Spring.
         // More validations can be applied and thrown manually before calling save
-
-        //JpaRepository repo = repositoryFactory.getRepository(reading.getDeviceType());
-
+        
         service.saveReading(reading);
     }
 }

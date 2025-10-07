@@ -30,7 +30,7 @@ public class IoTDeviceSimulator {
     // All configurations in this simulator can be exported to a properties file for production ready code
 
     // Run IOT simulation for 30 seconds and stop
-    private final long SIMULATION_DURATION_IN_SECONDS = 10;
+    private final long SIMULATION_DURATION_IN_SECONDS = 30;
 
     // Max number of parallel threads for scheduling reading simulations
     private final int SCHEDULER_POOL_SIZE = 15;
@@ -80,7 +80,7 @@ public class IoTDeviceSimulator {
                 scheduler.scheduleAtFixedRate(
                         () -> generateReading(deviceId, type),
                         random.nextInt(1000), // Start anytime in the next 1 second
-                        1000,
+                        1000, // Send a reading every second
                         TimeUnit.MILLISECONDS
                 );
             }
@@ -115,7 +115,7 @@ public class IoTDeviceSimulator {
         // Generate meaningful IOT device reading based on device type
         double readingValue = switch (deviceType.toLowerCase()) {
             case "thermostat" -> 20 + random.nextDouble() * 10;     // 20–30 °C
-            case "wearable"   -> 60 + random.nextInt(40);           // 60–100 bpm
+            case "wearable"   -> 60 + random.nextInt(40);    // 60–100 bpm
             case "vehicle"    -> 5 + random.nextDouble() * 15;      // 5–20 L/h
             default           -> random.nextDouble() * 100;         // fallback
         };
